@@ -5,7 +5,7 @@ const Book = (props) => {
   const { title, author } = props;
   return (
     <div>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{author}</p>
       <input type="button" value="Remove" />
     </div>
