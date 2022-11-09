@@ -9,8 +9,8 @@ export const checkCategoryStatus = (id) => ({
   id,
 });
 
-export default categoryReducer(state = initialState, action){
-  switch(action.type){
+export default function categoryReducer(state = initialState, action) {
+  switch (action.type) {
     case types.STATUS_CHECKED:
       return 'Under construction';
     default:
