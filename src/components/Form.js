@@ -19,7 +19,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newBook = { ...inputText, id: uuidv4() };
+    const newBook = { ...inputText, item_id: uuidv4(), category: 'Fiction' };
     dispatch(addBooks(newBook));
   };
   return (
