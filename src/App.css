@@ -5,6 +5,27 @@
   padding: 0;
 }
 
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: #a6a6a6;
+}
+
+a:hover, button:hover {
+  cursor: pointer;
+}
+
 body {
   background-color: #6b6060;
 }
@@ -13,10 +34,17 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2em;
+  background-color: #fff;
+  padding: 0 10%;
+  border: 1px solid #e8e8e8;
 }
 
 nav {
   width: 30%;
   display: flex;
   justify-content: space-evenly;
+}
+
+header h1 {
+  color: #0290ff;
 }
