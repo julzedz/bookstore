@@ -42,7 +42,7 @@ export default function booksReducer(state = initialState, action) {
       return {
         ...state,
         bookList: [
-          ...state.bookList.filter((book) => book.id !== action.payload.id),
+          ...state.bookList.filter((book) => book.id !== action.payload),
         ],
       };
     default:

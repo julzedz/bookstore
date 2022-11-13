@@ -1,7 +1,7 @@
 import types from '../types/types';
 
 const initialState = {
-  categories: [],
+  categories: '',
 };
 
 export const checkCategoryStatus = (id) => ({
@@ -12,7 +12,7 @@ export const checkCategoryStatus = (id) => ({
 export default function categoryReducer(state = initialState, action) {
   switch (action.type) {
     case types.STATUS_CHECKED:
-      return 'Under construction';
+      return { ...state, categories: 'Under construction' };
     default:
       return state;
   }
