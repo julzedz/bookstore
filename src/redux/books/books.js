@@ -1,51 +1,50 @@
+/* eslint-disable no-param-reassign */
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 import types from '../types/types';
 
 const initialState = {
-  bookList: [
-    {
-      id: 1,
-      title: 'Things Fall Apart',
-      author: 'Chinua Achebe',
-    },
-    {
-      id: 2,
-      title: 'Purple Hibiscus',
-      author: 'Chimamanda Ngozi Adichie',
-    },
-  ],
+  bookList: {},
 };
 
-// action creators
-export function addBooks(book) {
-  return {
-    type: types.ADD_BOOK,
-    payload: book,
-  };
-}
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/rWQMlu9nxXha6w1Sl8Xk/books';
 
-export function removeBook(id) {
-  return {
-    type: types.REMOVE_BOOK,
-    payload: id,
-  };
-}
+export const fetchBooks = createAsyncThunk(
+  types.FETCH_BOOKS,
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get(URL);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  },
+);
+export const addBooks = createAsyncThunk(
+  types.ADD_BOOK,
+  async (payload, thunkAPI) => {
+    await axios.post(URL, payload);
+    return thunkAPI.dispatch(fetchBooks());
+  },
+);
 
-// reducer
-export default function booksReducer(state = initialState, action) {
-  switch (action.type) {
-    case types.ADD_BOOK:
-      return {
-        ...state,
-        bookList: [...state.bookList, action.payload],
-      };
-    case types.REMOVE_BOOK:
-      return {
-        ...state,
-        bookList: [
-          ...state.bookList.filter((book) => book.id !== action.payload),
-        ],
-      };
-    default:
-      return state;
-  }
-}
+export const removeBook = createAsyncThunk(
+  types.REMOVE_BOOK,
+  async (payload, thunkAPI) => {
+    await axios.delete(`${URL}/${payload}`);
+    return thunkAPI.dispatch(fetchBooks());
+  },
+);
+
+const bookSlice = createSlice({
+  name: 'GetBookSlice',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [fetchBooks.fulfilled]: (state, action) => {
+      state.bookList = action.payload;
+    },
+  },
+});
+
+export default bookSlice.reducer;
