@@ -1,7 +1,18 @@
 import types from '../types/types';
 
 const initialState = {
-  bookList: [],
+  bookList: [
+    {
+      id: 1,
+      title: 'Things Fall Apart',
+      author: 'Chinua Achebe',
+    },
+    {
+      id: 2,
+      title: 'Purple Hibiscus',
+      author: 'Chimamanda Ngozi Adichie',
+    },
+  ],
 };
 
 // action creators
@@ -31,7 +42,7 @@ export default function booksReducer(state = initialState, action) {
       return {
         ...state,
         bookList: [
-          ...state.bookList.filter((book) => book.id !== action.payload.id),
+          ...state.bookList.filter((book) => book.id !== action.payload),
         ],
       };
     default:
