@@ -5,19 +5,19 @@
   padding: 0;
 }
 
-ul {
-  list-style: none;
+body {
+  background-color: #fafafa;
 }
 
-button {
-  border: none;
+ul {
+  list-style: none;
 }
 
 p {
   margin: 0;
 }
 
-li a {
+a {
   text-decoration: none;
   color: #a6a6a6;
 }
@@ -26,25 +26,140 @@ a:hover, button:hover {
   cursor: pointer;
 }
 
-body {
-  background-color: #6b6060;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2em;
   background-color: #fff;
-  padding: 0 10%;
+  padding: 1em 10%;
   border: 1px solid #e8e8e8;
 }
 
 nav {
   width: 30%;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 header h1 {
   color: #0290ff;
+}
+
+.library {
+  background-color: inherit;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.eachbook {
+  padding: 2em 2em 1em 2em;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  display: flex;
+  gap: 5%;
+}
+
+.abook {
+  width: 50%;
+}
+
+.perc {
+  width: 20%;
+}
+
+.update {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+  border-left: .1em solid #e8e8e8;
+}
+
+.percent {
+  font-size: 2em;
+}
+
+.comp {
+  font-size: .8em;
+  color: #a6a6a6;
+}
+
+.chapter {
+  color: #a6a6a6;
+  font-size: .8em;
+  padding-bottom: .3em;
+}
+
+.chap-num {
+  padding-bottom: .3em;
+  
+}
+
+.myform {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 3em;
+
+}
+
+.titleinput {
+  width: 45%;
+  padding: .5em;
+  border: none;
+}
+
+.authorinput {
+  width: 45%;
+  padding: .5em;
+  border: none;
+}
+
+.submitbutton {
+  background: #0290ff;
+  padding: 1em 2em;
+  border: none;
+  color: #fff;
+  font-size: .6em;
+  font-weight: 600;
+}
+
+.booktitle {
+  font-size: 1.2em;
+  padding: .1em 0;
+}
+
+.bookauthor {
+  font-size: .9em;
+  color: #4386bf;
+  padding: .1em 0 .5em;
+}
+
+.bkbtn {
+  border: none;
+  background-color: inherit;
+  margin-top: 1em;
+  margin-right: .5em;
+  padding-right: .5em;
+  color: #4386bf;
+  border-right: .1em solid #e8e8e8;
+
+}
+
+.bkbtn:hover {
+  cursor: pointer;
+  color: #0290ff;
+}
+
+.lineb {
+  color: #a6a6a6;
 }

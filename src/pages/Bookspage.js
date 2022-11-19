@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
 import Form from '../components/Form';
 import { fetchBooks } from '../redux/books/books';
+import '../App.css';
 
 const Bookspage = () => {
   const currentBooks = useSelector((state) => state.GetBookSlice);
