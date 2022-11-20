@@ -23,26 +23,30 @@ const Form = () => {
     dispatch(addBooks(newBook));
   };
   return (
-    <form className="myform" onSubmit={handleSubmit}>
-
-      <input
-        className="titleinput"
-        type="text"
-        name="title"
-        value={inputText.title}
-        onChange={handleChange}
-        placeholder="Title"
-      />
-      <input
-        className="authorinput"
-        type="text"
-        name="author"
-        value={inputText.author}
-        onChange={handleChange}
-        placeholder="Author"
-      />
-      <input className="submitbutton" type="submit" value="ADD BOOK" />
-    </form>
+    <div>
+      <div>
+        <p>ADD NEW BOOK</p>
+      </div>
+      <form className="myform" onSubmit={handleSubmit}>
+        <input
+          className="titleinput"
+          type="text"
+          name="title"
+          value={inputText.title}
+          onChange={handleChange}
+          placeholder="Title"
+        />
+        <input
+          className="authorinput"
+          type="text"
+          name="author"
+          value={inputText.author}
+          onChange={handleChange}
+          placeholder="Author"
+        />
+        <input className="submitbutton" type="submit" value="ADD BOOK" />
+      </form>
+    </div>
   );
 };
 
