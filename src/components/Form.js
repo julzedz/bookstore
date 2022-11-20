@@ -23,9 +23,10 @@ const Form = () => {
     dispatch(addBooks(newBook));
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="myform" onSubmit={handleSubmit}>
 
       <input
+        className="titleinput"
         type="text"
         name="title"
         value={inputText.title}
@@ -33,13 +34,14 @@ const Form = () => {
         placeholder="Title"
       />
       <input
+        className="authorinput"
         type="text"
         name="author"
         value={inputText.author}
         onChange={handleChange}
         placeholder="Author"
       />
-      <input type="submit" value="Submit" />
+      <input className="submitbutton" type="submit" value="ADD BOOK" />
     </form>
   );
 };

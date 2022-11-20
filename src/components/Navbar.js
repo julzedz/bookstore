@@ -7,8 +7,8 @@ function Navbar() {
     <header>
       <h1>Bookstore CMS</h1>
       <nav>
-        <Link to="/">Books</Link>
-        <Link to="/categories">Categories</Link>
+        <Link to="/">BOOKS</Link>
+        <Link to="/categories">CATEGORIES</Link>
       </nav>
     </header>
   );
